@@ -5,6 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://www.hdnicewallpapers.com/Walls/Big/House%20and%20Bungalow/Elegant_Modern_Luxury_House_Wallpaper.jpg");
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 code {

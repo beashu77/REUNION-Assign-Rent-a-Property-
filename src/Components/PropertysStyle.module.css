@@ -1,0 +1,192 @@
+.NavbarConatiner {
+  height: 100px;
+  /* border: 1px solid wheat; */
+  display: flex;
+  /* background-color: 
+   #5079cb; */
+  justify-content: space-around;
+}
+
+.NavbarConatiner > div > button,
+.myButton {
+  padding: 0.5rem;
+  font-size: 15px;
+  background-color: transparent;
+  border: 1px solid rgb(220, 220, 26);
+  color: rgb(220, 220, 26);
+  font-weight: bold;
+}
+
+.NavbarConatiner > div > button:hover {
+  background-color: rgb(220, 220, 26);
+  color: white;
+}
+.FilterBox >div :last-child:hover {
+  background-color: rgb(220, 220, 26);
+  color: white;
+}
+
+.NavbarConatiner > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  list-style: none;
+  justify-content: space-around;
+  color: white;
+  font-size: 18px;
+  width: 50%;
+  gap: 10px;
+  /* border: 2px solid red */
+}
+
+.NavbarConatiner > div > li:hover {
+  border-bottom: 2px solid rgb(220, 220, 26);
+}
+
+.NavbarConatiner > div > h3 {
+  color: white;
+  font-size: 35px;
+}
+
+.NavbarConatiner > div > h3 > span {
+  color: rgb(220, 220, 26);
+}
+
+.NavbarConatiner > div > li {
+  visibility: visible;
+}
+
+.NavbarConatiner > .select {
+  display: none;
+}
+
+
+
+/* Propertys Starts */
+.Box {
+  border: 2px solid;
+  box-sizing: border-box;
+}
+.BoxTitle > h1,
+p {
+  color: white;
+  /* border:1px solid red; */
+  width: 100%;
+  margin: 0;
+  margin-top: 10px;
+  font-size: 18px;
+}
+.BoxTitle > h1 {
+  font-size: 50px;
+  margin-top: 100px;
+  color: rgb(220, 220, 26);
+}
+.BoxTitle > h1 > span {
+  color: white;
+}
+
+.FilterBox {
+  /* border: 2px solid blue; */
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 70%;
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  border-radius: 5px;
+  border:1px solid rgba(0,0,0,0.1);
+  padding: 1rem;
+  margin-top: 25px;
+
+}
+
+.FilterBox > div {
+  border-left: 1px solid rgba(0,0,0,0.5);
+  padding-left: 5px;
+  text-align: left;
+}
+.FilterBox  :last-child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.FilterBox > div  :first-child{
+    color: rgb(220, 220, 26);
+}
+.FilterBox > div >p{
+    color: black;
+}
+/* Propertys Ends */
+
+
+
+@media all and (min-width: 401px) and (max-width: 720px) {
+  .NavbarConatiner > div > li {
+    display: none;
+  }
+  .NavbarConatiner > .select {
+    display: unset;
+    /* border: 2px solid ; */
+    display: flex;
+  }
+  .NavbarConatiner > .select > select {
+    background-color: transparent;
+    border: 1px solid rgb(220, 220, 26);
+    padding: 0.5rem;
+    color: rgb(220, 220, 26);
+    font-weight: bold;
+    font-size: 17px;
+  }
+  .NavbarConatiner > .select > select > option {
+    background-color: #416bbd;
+  }
+  .FilterBox {
+    flex-direction: column;
+  }
+}
+
+@media all and (min-width: 81px) and (max-width: 400px) {
+  .NavbarConatiner > div > li {
+    display: none;
+  }
+  .NavbarConatiner > .select {
+    display: unset;
+    /* border: 2px solid ; */
+    display: flex;
+  }
+  .NavbarConatiner > .select > select {
+    background-color: transparent;
+    border: 1px solid rgb(220, 220, 26);
+    padding: 0.5rem;
+    color: rgb(220, 220, 26);
+    font-weight: bold;
+    font-size: 17px;
+  }
+  .NavbarConatiner > .select > select > option {
+    background-color: #416bbd;
+  }
+
+  .FilterBox {
+    flex-direction: column;
+  }
+}
+
+
+.rangeOption{
+  background-color: burlywood;
+  height: 100px;
+  color: black;
+}
+
+.FilterBox>div>select ,.FilterBox>div>input ,.FilterBox>div>div>select{
+  background-color: transparent;
+  border: 1px solid rgb(220, 220, 26);
+  padding: 0.5rem;
+  color: rgb(220, 220, 26);
+  font-weight: bold;
+  font-size: 17px;
+ 
+
+}
+
