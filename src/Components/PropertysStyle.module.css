@@ -1,3 +1,7 @@
+option{
+  background-color: #416bbd;
+}
+
 .NavbarConatiner {
   height: 100px;
   /* border: 1px solid wheat; */
@@ -17,14 +21,14 @@
   font-weight: bold;
 }
 
-.NavbarConatiner > div > button:hover {
+/* .NavbarConatiner > div > button:hover {
   background-color: rgb(220, 220, 26);
   color: white;
 }
 .FilterBox >div :last-child:hover {
   background-color: rgb(220, 220, 26);
   color: white;
-}
+} */
 
 .NavbarConatiner > div {
   display: flex;
@@ -97,9 +101,18 @@ p {
   border-radius: 5px;
   border:1px solid rgba(0,0,0,0.1);
   padding: 1rem;
-  margin-top: 25px;
-
+  margin-top: 55px;
+   margin-bottom: 100px;
 }
+
+.FilterBox>div >button{
+  background-color: transparent;
+  padding: 0.5rem;
+  border:1px solid rgb(220, 220, 26);
+  font-size: 18px;
+}
+
+
 
 .FilterBox > div {
   border-left: 1px solid rgba(0,0,0,0.5);
@@ -118,6 +131,73 @@ p {
     color: black;
 }
 /* Propertys Ends */
+
+
+
+.rangeOption{
+  background-color: burlywood;
+  height: 100px;
+  color: black;
+}
+
+.FilterBox>div>select ,.FilterBox>div>input ,.FilterBox>div>div>select{
+  background-color: transparent;
+  border: 1px solid rgb(220, 220, 26);
+  padding: 0.5rem;
+  color: rgb(220, 220, 26);
+  font-weight: bold;
+  font-size: 17px;
+ 
+
+}
+
+.PropertyImg{
+  height: 50%;
+  width: 100%;
+  /* border-top-left-radius: 15px;
+  border-top-right-radius: 15px; */
+ 
+ 
+  padding-top: 5px;
+}
+.CardBox{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: auto;
+  gap:20px;
+  /* border: 3px solid powderblue; */
+  width: 70%;
+ margin: auto;
+ background-color: white;
+}
+.SingleCardBox{
+  /* background-color: whitesmoke; */
+  /* border: 3px solid red; */
+  height: 450px;
+  color: black;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+
+
+}
+
+.SingleCardBoxBottom{
+  /* border: 1px solid; */
+ background-color: lightgray;
+ padding: 5px;
+ color: black;
+ height: 200px;
+ text-align: center;
+}
+
+
+.SingleCardBoxBottom3{
+  display: flex;
+  color: blue;
+  flex-direction: column;
+
+}
+
+
 
 
 
@@ -143,6 +223,10 @@ p {
   }
   .FilterBox {
     flex-direction: column;
+  }
+
+  .CardBox{
+    grid-template-columns: repeat(2,1fr);
   }
 }
 
@@ -170,23 +254,10 @@ p {
   .FilterBox {
     flex-direction: column;
   }
+
+  .CardBox{
+    grid-template-columns: repeat(1,1fr);
+  }
 }
 
-
-.rangeOption{
-  background-color: burlywood;
-  height: 100px;
-  color: black;
-}
-
-.FilterBox>div>select ,.FilterBox>div>input ,.FilterBox>div>div>select{
-  background-color: transparent;
-  border: 1px solid rgb(220, 220, 26);
-  padding: 0.5rem;
-  color: rgb(220, 220, 26);
-  font-weight: bold;
-  font-size: 17px;
- 
-
-}
 

@@ -7,6 +7,7 @@ import style from "./PropertysStyle.module.css";
 const Propertys = () => {
   const [data, setData] = useState([]);
   const [formData, setformData] = useState({});
+  const [filterData, setFilterData] = useState();
 
   const getData = () => {
     fetch("https://mock-3-json.herokuapp.com/property")
@@ -30,32 +31,59 @@ const Propertys = () => {
 
   const handleSubmit = () => {
     console.log(formData);
+    //console.log(data)
     let arr1 = data.filter(function (e) {
       return e.location === formData.location;
     });
     console.log(arr1);
+    if (formData.location) {
+      setFilterData(arr1);
+    }
+
     let arr2 = arr1.filter(function (e) {
       return e.PropertyType === formData.PropertyType;
     });
     console.log(arr2);
 
+    if (formData.PropertyType) {
+      setFilterData(arr2);
+    }
+
     let arr3 = [];
 
     for (let i = 0; i < arr2.length; i++) {
       console.log(arr2[i].rent,formData.MinPropertyRange,formData.MaxPropertyRange)
-      if (Number(arr2[i].rent) > Number(formData.MinPropertyRange) && Number(arr2[i].rent) < Number(formData.MaxPropertyRange)) {
+      if (Number(arr2[i].rent) >= Number(formData.MinPropertyRange) && Number(arr2[i].rent) < Number(formData.MaxPropertyRange)) {
         arr3.push(arr2[i])
-      
+
       }
     }
 
- 
+    if (formData.MinPropertyRange && formData.MaxPropertyRange) {
+      setFilterData(arr3);
+    }
+
+   
+   
     const date = new Date(formData.date);
     const unixTimestamp = Math.floor(date.getTime() / 1000);
-    console.log(unixTimestamp);
+   //  console.log(unixTimestamp);
 
-  
+   let arr4=[]
+    for(let k=0;k<arr3.length;k++){
+     const date1=new Date(data[k].MoveInData)
+     let unixTimestamp1 = Math.floor(date1.getTime() / 1000);
+       //  console.log(unixTimestamp,unixTimestamp1);
+        if(unixTimestamp1>=unixTimestamp){
+         arr4.push(data[k])
+          console.log(arr4)
+        }
+     }
+     if(formData.date){
+       setFilterData(arr4)
+     }
 
+    setformData({});
   };
   return (
     <div className={style.Box}>
@@ -74,7 +102,7 @@ const Propertys = () => {
             placeholder="City"
             className={style.solid}
           >
-            <option value="">State</option>
+            <option value="">City</option>
             <option value="Pune">Pune</option>
             <option value="Mumbai">Mumbai</option>
             <option value="Nagpur">Nagpur</option>
@@ -83,7 +111,7 @@ const Propertys = () => {
           </select>
         </div>
         <div>
-          <p>Location</p>
+          <p>Move In Date</p>
           <input
             type="date"
             name="date"
@@ -92,7 +120,7 @@ const Propertys = () => {
           />
         </div>
         <div>
-          <p>Location</p>
+          <p>Rent</p>
           <div style={{ display: "flex" }}>
             <select
               placeholder="Property-range"
@@ -123,8 +151,11 @@ const Propertys = () => {
             </select>
           </div>
         </div>
+
+
+        
         <div>
-          <p>Location</p>{" "}
+          <p>Property Type</p>{" "}
           <select
             placeholder="Property-type"
             onChange={handleChange}
@@ -147,10 +178,14 @@ const Propertys = () => {
       </div>
 
       <div className={style.CardBox}>
-        {data &&
-          data.map((elem) => {
-            return <Property data={elem} key={elem.id} />;
-          })}
+        {filterData
+          ? filterData.map((elem) => {
+              return <Property data={elem} key={elem.id} />;
+            })
+          : data.map((elem) => {
+              return <Property data={elem} key={elem.id} />;
+            })
+            }
       </div>
     </div>
   );
